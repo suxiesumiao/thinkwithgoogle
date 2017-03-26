@@ -1,0 +1,532 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: #FFF;
+}
+
+header {
+    margin: 0 auto;
+    width: 96%;
+    height: 66px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo,
+.locate {
+    line-height: 66px;
+    display: inline-block;
+}
+
+.logo > img {
+    vertical-align: middle;
+    width: 186px;
+}
+
+.links > a,
+.links > span,
+.search,
+.category {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 24px 10px;
+    text-decoration: none;
+    color: #6A6A6A;
+    transition: all .3s;
+}
+
+.category {
+    display: none;
+}
+
+.links > a:hover {
+    background: #F3F3F3;
+}
+
+.links > span:hover {
+    cursor: pointer;
+    color: #FFF;
+    background: #37474F;
+}
+
+
+/* 尺寸小于1000 的设备的样式*/
+
+@media screen and (max-width: 1000px) {
+    .locate,
+    .links > a,
+    .links > span {
+        display: none;
+    }
+    .category {
+        padding: 0;
+        display: inline-block;
+    }
+}
+
+.hot {
+    display: flex;
+}
+
+.current {
+    flex: 2;
+    position: relative;
+}
+.trends {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+
+.img_1 {
+    height: 550px;
+    background-image: url("../images/marketing-trends-year-in-search-2016-hero-c.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.trend_img {
+    height: 65%;
+    background-size: cover;
+}
+
+.img_2 {
+    background-image: url("../images/yt-leaderboard-ye-hero.jpg");
+}
+
+.img_3 {
+    background-image: url("../images/marketing-insights-mobile-first-media-plans-2017-hero.jpg");
+}
+
+.current .text_box {
+    width: 50%;
+    height: 50%;
+    color: #FFF;
+    padding: 5%;
+    background: #1E88E5;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.trends .text_box {
+    position: relative;/* 防止图片放大之后压住下面的文字 */
+    color: #FFF;
+    padding: 10px;
+    width: 100%;
+    height: 35%;
+}
+
+.text_img_2 {
+    background: #E53935;
+}
+
+.text_img_3 {
+    background: #673AB7;
+}
+
+.transform {
+    transition: all .5s;
+}
+
+.transform:hover {
+    opacity: .9;
+    transform: scale(1.05);
+}
+
+
+/* 尺寸在 600-1000之间 */
+
+@media screen and (max-width: 1000px) and (min-width: 601px) {
+    .hot {
+        flex-direction: column;
+    }
+    .trends {
+        flex-direction: row;
+    }
+    .trends > .wrapper {
+        width: 50%;
+    }
+    .trend_img {
+        height: 200px;
+    }
+}
+
+
+/* 尺寸在600 以下 */
+
+@media screen and (max-width: 600px) {
+    .hot {
+        flex-direction: column;
+    }
+    .trends > .wrapper {
+        height: 150px;
+        display: flex;
+    }
+    .trends .text_box {
+        height: inherit;
+    }
+    .trend_img {
+        width: 300px;
+        height: 100%;
+    }
+    .current .text_box {
+        width: 90%;
+    }
+}
+
+.normal {
+    width: 96%;
+    margin: 30px auto 0;
+    display: flex;
+}
+
+.news {
+    flex: 2;
+}
+
+.piece {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.piece > img {
+    width: 300px;
+    height: 170px;
+}
+
+.title {
+    margin-left: 2%;
+}
+
+.title > h3 {
+    color: #333;
+    font-weight: 100;
+}
+
+.title > span {
+    display: inline-block;
+    padding-right: 10px;
+    border-right: 1px solid #AAA;
+    color: #AAA;
+    font-size: small;
+}
+
+.title > a {
+    text-decoration: none;
+    color: #5677FC;
+}
+
+.about_us {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #F5F5F5;
+}
+
+.module {
+    padding: 10%;
+    border-bottom: 1px solid #AAA;
+}
+
+.about_us h4 {
+    text-align: left;
+    padding: 10px 0;
+    color: #233;
+    font-weight: 100;
+}
+
+.newsletter > button {
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: #FFF;
+    width: 100px;
+    height: 36px;
+    background: #5677FC;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 1px #AAA;
+}
+
+.newsletter > button:hover {
+    cursor: pointer;
+}
+
+.follow {
+    display: flex;
+}
+
+.inspired > span {
+    display: block;
+    padding: 10px 0;
+}
+
+.creative {
+    padding: 20px 0;
+    display: flex;
+}
+
+.creative > span {
+    padding-left: 30px;
+}
+
+.picks {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.pick {
+    position: relative;
+    margin: 20px auto;
+}
+
+.count {
+    color: #FFF;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: #5677FC;
+}
+
+.pick > img {
+    width: 100%;
+}
+
+.text_wrapper > span {
+    display: block;
+    padding: 10px 0;
+    text-align: left;
+    color: grey;
+    font-size: small;
+}
+
+.text_wrapper > p {
+    text-align: left;
+    color: #233;
+    font-size: small;
+    line-height: 1.5em
+}
+
+.planing a {
+    text-decoration: none;
+    color: #333;
+}
+
+.planing a:hover {
+    color: #5677FC;
+}
+
+.planing > a {
+    color: #5677FC;
+}
+
+
+/*尺寸在1000以下的设备*/
+
+@media screen and (max-width: 1000px) {
+    .normal {
+        flex-direction: column;
+    }
+    .module {
+        padding: 2%;
+    }
+    .pick {
+        display: flex;
+        margin: 20px 0;
+        flex-direction: row;
+    }
+    .pick > img {
+        width: 400px;
+    }
+    .text_wrapper {
+        padding-left: 5%;
+    }
+    .text_wrapper span,
+    .text_wrapper p {
+        padding-top: 0;
+        font-size: 1em;
+    }
+}
+
+
+/*尺寸在 600以下的设备 */
+
+@media screen and (max-width: 600px) {
+    .piece > img {
+        width: 40%;
+        height: 40%;
+    }
+    .pick > img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.light {
+    display: flex;
+    justify-content: space-between;
+    background: #37474F;
+}
+
+.get_newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.get_newsletter > p {
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+.contact > span {
+    display: inline-block;
+    color: #FFF;
+    font-size: 1em;
+    padding-top: 20px;
+}
+
+.app_links {
+    width: 300px;
+    display: flex;
+    margin-right: 2%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.apps {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.app {
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.app > img {
+    width: 24px;
+    height: 24px;
+}
+
+.deep {
+    display: flex;
+    justify-content: space-between;
+    background: #263238;
+}
+
+.google_links {
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.google_links a {
+    display: inline-block;
+    padding: 0 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.get_newsletter > button {
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: #FFF;
+    width: 100px;
+    height: 36px;
+    background: #5677FC;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+.google_logo {
+    display: inline-block;
+}
+
+.country {
+    color: #FFF;
+    padding-right: 2%;
+}
+
+.country > span {
+    line-height: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+    .light {
+        flex-direction: column;
+    }
+    .deep {
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .get_newsletter {
+        padding-top: 10px;
+        border-bottom: 1px solid #AAA;
+    }
+    .google_links{
+        padding: 2%;
+    }
+    .app_links {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+    }
+    .app {
+        display: flex;
+        align-items: center;
+    }
+    .country {
+        padding-left: 2%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .app_links {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 2%;
+    }
+    .apps {
+        padding: 10px 0;
+        justify-content: flex-start;
+    }
+    .contact {
+        padding: 10px 0;
+    }
+    .deep {
+        flex-direction: column;
+    }
+    .country {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        background: #E0E0E0;
+    }
+    body {
+        margin: 0 auto;
+        width: 1440px;
+    }
+}
